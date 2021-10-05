@@ -9,14 +9,14 @@ const itemSchema = new Schema({
     type: Number,
     required: true,
   },
-  category: {
-    type: Number,
+  category: [{
+    type: String,
     required: true
-  },
+  }],
   image: {
     type: String
   },
 });
 
-const Item = model("Item", itemSchema);
-module.exports = Item;
+
+module.exports = itemSchema;

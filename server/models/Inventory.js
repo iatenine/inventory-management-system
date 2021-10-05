@@ -1,14 +1,11 @@
 const { Schema, model } = require("mongoose");
+const itemSchema = require('./Item')
 
 const inventorySchema = new Schema({
   name: {
     type: String,
     required: true,
     unique: true,
-  },
-  categories: {
-    type: String,
-    required: true,
   },
   items: [itemSchema],
 });
