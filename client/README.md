@@ -91,7 +91,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 # Semantic UI
 
 - [Semantic UI](https://semantic-ui.com/introduction/getting-started.html)<br />
-  command-line: `#`<br />
+  command-line: `npm i semantic-ui-react`<br />
   Be sure to have node.js, homebrew, and gulp installed before using Semantic
 
 ## Learn more
