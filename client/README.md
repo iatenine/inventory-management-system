@@ -88,6 +88,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - [nodemon](https://www.npmjs.com/package/nodemon)<br />
   command-line: `npm i nodemon`<br />
 
+# Semantic UI
+
+- [Semantic UI](https://semantic-ui.com/introduction/getting-started.html)<br />
+  command-line: `#`<br />
+  Be sure to have node.js, homebrew, and gulp installed before using Semantic
+
 ## Learn more
 
 - [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
