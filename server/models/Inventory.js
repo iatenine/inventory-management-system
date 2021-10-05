@@ -6,8 +6,11 @@ const inventorySchema = new Schema({
     required: true,
     unique: true,
   },
-  categories: {},
-  items: {},
+  categories: {
+    type: String,
+    required: true,
+  },
+  items: [itemSchema],
 });
 
 const Inventory = model("Inventory", inventorySchema);
