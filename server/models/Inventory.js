@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const itemSchema = require('./Item')
 
 const inventorySchema = new Schema({
   name: {
@@ -6,8 +7,7 @@ const inventorySchema = new Schema({
     required: true,
     unique: true,
   },
-  categories: {},
-  items: {},
+  items: [itemSchema],
 });
 
 const Inventory = model("Inventory", inventorySchema);
