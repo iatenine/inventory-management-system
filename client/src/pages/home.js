@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Grid from 'react-css-grid';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
+<<<<<<< HEAD:client/src/components/home.js
 const homepageHeader = ({ mobile }) => (
   <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
   <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
@@ -58,3 +59,15 @@ const homepageFooter = (props) => (
 )
 
 export { }
+=======
+export const Home = () => {
+  return (
+    <div>
+      <h1>Homepage!</h1>
+      <h3>in-progress</h3>
+    </div>
+  );
+};
+
+export default Home;
+>>>>>>> 536d81c9498b38554c1addd0d2f62eb9422e2220:client/src/pages/home.js
