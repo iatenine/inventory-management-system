@@ -8,15 +8,19 @@ const itemSchema = new Schema({
   quantity: {
     type: Number,
     required: true,
+    default: 0,
   },
-  category: [{
-    type: String,
-    required: true
-  }],
+  category: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
   image: {
-    type: String
+    type: String,
   },
 });
 
+const Item = model("Item", itemSchema);
 
-module.exports = itemSchema;
+module.exports = Item;
