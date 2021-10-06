@@ -1,3 +1,18 @@
+# Inventory Management System
+
+Tired of having to keep track of all your booze?
+
+Inventory Management System is a stack web app with persistent data for mobile devices as well as desktop. The simplistic design allows users to keep track of their alcohol inventory with multiple features using an [insert API here]. We wanted to have the interested of small business owners and individuals alike.
+
+## Requirements
+
+<!-- ----------------------- -->
+
+```
+If you choose to accept your mission....
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -39,8 +54,84 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Technologies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- ----------------------- -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Express
+- Mongo DB
+- Mongoose
+- Express
+- Morgan
+- Node.js
+- JavaScript
+- HTML
+- CSS
+
+## Screenshot
+
+<!-- ----------------------- -->
+
+![Screen Shot](./assets/#.png)
+![Screen Shot](./assets/#.png)
+
+## Dependancies
+
+<!-- ----------------------- -->
+
+- [Mongoose](https://www.npmjs.com/package/mongoose)<br />
+  command-line: `npm i mongoose`<br />
+
+- [Morgan](https://www.npmjs.com/package/morgan)<br />
+  command-line: `npm i morgan`<br />
+
+- [nodemon](https://www.npmjs.com/package/nodemon)<br />
+  command-line: `npm i nodemon`<br />
+
+# Semantic UI
+
+- [Semantic UI](https://semantic-ui.com/introduction/getting-started.html)<br />
+  command-line: `npm i semantic-ui-react`<br />
+  Be sure to have node.js, homebrew, and gulp installed before using Semantic
+  'npm 
+
+## Learn more
+
+- [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
+- [MongoDB Website](https://www.mongodb.com/)
+- [Robo 3T Website](https://robomongo.org/download)
+- [MongoJS Documentation](https://www.npmjs.com/package/mongojs)
+- [Mongoose Documentation](http://mongoosejs.com/docs/guide.html)
+- [routes on Node.js and MongoDB](https://www.geeksforgeeks.org/restfull-routes-on-node-js-and-mongodb/)
+- To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Heroku
+
+<!-- ----------------------- -->
+
+[Heroku](https://something.herokuapp.com)
+
+## Application
+
+<!-- ----------------------- -->
+
+[URL to the github repo](https://github.com/iatenine/inventory-management-system)
+
+## Contributions and Contact Information
+
+<!-- ----------------------- -->
+
+```
+Catherine Cox
+ccox.034@gmail.com
+
+Jack Linhart
+FullJackDevelopment@gmail.com
+
+Strom Morzos
+storm.morzos@gmail.com
+
+Justin Phillips
+jukphillips1990@gmail.com
+
+```
