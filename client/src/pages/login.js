@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
+//import { useMutation } from "@apollo/client";
 //import { Link } from "react-router-dom";
-import { LOGIN } from "../utils/mutations";
-import Auth from "../utils/auth";
+//import { LOGIN } from "../utils/mutations";
+//import Auth from "../utils/auth";
 import {
   Button,
   Form,
@@ -13,30 +13,30 @@ import {
   Segment,
 } from "semantic-ui-react";
 
-function Login() {
-  const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error }] = useMutation(LOGIN);
+export const Login = () => {
+  // const [formState, setFormState] = useState({ email: "", password: "" });
+  // const [login, { error }] = useMutation(LOGIN);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
-      });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const mutationResponse = await login({
+  //       variables: { email: formState.email, password: formState.password },
+  //     });
+  //     const token = mutationResponse.data.login.token;
+  //     Auth.login(token);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFormState({
+  //     ...formState,
+  //     [name]: value,
+  //   });
+  // };
 
   return (
     <div>
@@ -49,25 +49,25 @@ function Login() {
           <Header as="h2" color="teal" textAlign="center">
             <Image src="/logo.png" /> Log-in to your account
           </Header>
-          <Form onSubmit={handleFormSubmit} size="large">
+          <Form size="large">
+            {" "}
+            {/*onSubmit={handleFormSubmit}*/}
             <Segment stacked>
               <Form.Input
                 fluid
                 icon="user"
                 iconPosition="left"
                 placeholder="E-mail address"
-                onChange={handleChange}
-              />
-
+              />{" "}
+              {/*onChange={handleChange}*/}
               <Form.Input
                 fluid
                 icon="lock"
                 iconPosition="left"
                 placeholder="Password"
                 type="password"
-                onChange={handleChange}
-              />
-
+              />{" "}
+              {/*onChange={handleChange}*/}
               <Button color="teal" fluid size="large">
                 Login
               </Button>
@@ -80,6 +80,6 @@ function Login() {
       </Grid>
     </div>
   );
-}
+};
 
 export default Login;
