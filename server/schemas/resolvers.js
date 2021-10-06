@@ -1,9 +1,32 @@
-const { Tech, Matchup } = require('../models');
+const { User, Inventory, Item } = require('../models');
+const {AuthenticationError} = require('apollo-server-express')
+const { signToken } = require("../utils/auth")
 
 const resolvers = {
-  // Query: {
+  Query: {
+    user: async (parent, args, context) => {
+      console.log(args._id)
+  
+        const users = await User.findOne({ _id: args._id }).populate({path: "inventories", populate: {path: "items"}})
 
-  // },
+        if(!users){
+          throw new AuthenticationError("Cannot find a user with this id!")
+        }
+
+        return users
+        },
+    
+    getUsers: async (parent, args, context) => {
+      const users = await User.find({}).populate({path: "inventories", populate: {path: "items"}})
+
+      if(!users) {
+        throw new AuthenticationError(User)
+      }
+
+      return users
+    }, 
+
+}
   // Mutation: {
   //   // createMatchup: async (parent, args) => {
   //   //   const matchup = await Matchup.create(args);
@@ -18,6 +41,6 @@ const resolvers = {
   //   //   return vote;
   //   // },
   // },
-};
 
+};
 module.exports = resolvers;

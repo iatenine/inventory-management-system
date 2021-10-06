@@ -10,6 +10,7 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    inventories: [Inventory]
   }
 
   type Inventory {
@@ -27,7 +28,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: User
+    user(_id: ID!): User!
+    getUsers: [User]
+    inventory: Inventory!
+  }
+
+  type Mutation {
+    login(email: String!, password: String!) : Auth
+    createUser(username: String!, email: String!, password: String!): Auth
   }
 
 `;
