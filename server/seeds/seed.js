@@ -28,19 +28,38 @@ db.once("open", async () => {
   const allInventories = await Inventory.find({});
   const allItems = await Item.find({});
 
-  allItems.map(async (item) => {
-    console.log(item._id);
-    const catedfdgory =
+  // Iterate through all items and inventories to randomly assign:
+  // categories -> items
+  // items -> inventories
+  // inventories -> users
+  for (let x = 0; x < allItems.length; x++) {
+    const category =
       categoryArray[Math.floor(Math.random() * categoryArray.length)];
-    await Item.findByIdAndUpdate(item._id, {
-      $push: { category: $each["Mazda"] },
-    });
-    console.assert(item.category.length !== 0, "Failed to update category");
-    return item;
-  });
+    const inventory =
+      allInventories[Math.floor(Math.random() * allInventories.length)];
+    await Item.findOneAndUpdate(
+      { _id: allItems[x]._id },
+      {
+        $push: { category },
+      }
+    );
+    await Inventory.findOneAndUpdate(
+      { _id: inventory._id },
+      {
+        $push: { items: [allItems[x]] },
+      }
+    );
+  }
 
-  console.log(allItems[0]);
+  for (let x = 0; x < allInventories.length; x++) {
+    const owner = allUsers[Math.floor(Math.random() * allUsers.length)];
+    await User.findOneAndUpdate(
+      { _id: owner._id },
+      {
+        $push: { inventories: [allInventories[x]] },
+      }
+    );
+  }
 
-  // console.log('Data seeded!');
   process.exit(0);
 });
