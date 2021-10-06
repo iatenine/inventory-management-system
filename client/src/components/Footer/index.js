@@ -1,6 +1,5 @@
 import React from "react";
 // Import React Router Link component for internal hyperlinks
-import {} from "react-router-dom";
 
 const homepageFooter = (props) => (
   <div className="bottom-style">
@@ -15,7 +14,7 @@ const homepageFooter = (props) => (
       <div>
         <div className="bottom-title">Github</div>
         <a
-          target="_blank"
+          target="blank"
           href="https://github.com/iatenine/inventory-management-system"
         >
           Repo Link
@@ -40,3 +39,4 @@ const homepageFooter = (props) => (
     </div>
   </div>
 );
+export default homepageFooter;

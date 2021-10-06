@@ -1,22 +1,15 @@
 import React from "react";
-import "./home.css";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import Grid from "react-css-grid";
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Message,
-  Segment,
-} from "semantic-ui-react";
+
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export const Home = () => {
   return (
     <div>
       <h1>Homepage!</h1>
+      <Header> </Header>
       <h3>in-progress</h3>
+      <Footer> </Footer>
     </div>
   );
 };
