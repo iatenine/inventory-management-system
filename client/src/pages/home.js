@@ -26,7 +26,7 @@ const homepageHeader = (props) => (
     <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
       {/* Use Link component to create a link that returns to the homepage on click */}
       <p className="m-0" style={{ fontSize: "1.75rem", fontWeight: "700" }}>
-        See your invintory
+        See your inventory
       </p>
     </div>
   </header>
@@ -71,6 +71,5 @@ const homepageFooter = (props) => (
   </div>
 );
 
-export {};
-
+// will work
 export default Home;
