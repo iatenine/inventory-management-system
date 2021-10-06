@@ -5,7 +5,7 @@
     "password": "5j6Cih",
     "inventories": [
       {
-        "label": "Sheathbill, snowy",
+        "name": "Sheathbill, snowy",
         "items": [
           {
             "name": "Central Federal Corporation",
@@ -28,11 +28,11 @@
         ]
       },
       {
-        "label": "Crake, african black",
+        "name": "Crake, african black",
         "items": []
       },
       {
-        "label": "Possum, common brushtail",
+        "name": "Possum, common brushtail",
         "items": [
           {
             "name": "Oncobiologics, Inc.",
@@ -49,7 +49,7 @@
         ]
       },
       {
-        "label": "Bandicoot, southern brown",
+        "name": "Bandicoot, southern brown",
         "items": [
           {
             "name": "Bank of America Corporation",
@@ -66,7 +66,7 @@
         ]
       },
       {
-        "label": "Monster, gila",
+        "name": "Monster, gila",
         "items": [
           {
             "name": "HC2 Holdings, Inc.",
@@ -102,7 +102,7 @@
     "password": "YtPeQSL3A",
     "inventories": [
       {
-        "label": "Lizard, mexican beaded",
+        "name": "Lizard, mexican beaded",
         "items": [
           {
             "name": "The Herzfeld Caribbean Basin Fund, Inc.",
@@ -125,7 +125,7 @@
         ]
       },
       {
-        "label": "Heron, boat-billed",
+        "name": "Heron, boat-billed",
         "items": [
           {
             "name": "Tahoe Resources, Inc.",
@@ -143,7 +143,7 @@
     "password": "lpd9sLsu",
     "inventories": [
       {
-        "label": "Common wallaroo",
+        "name": "Common wallaroo",
         "items": [
           {
             "name": "Research Frontiers Incorporated",
@@ -160,7 +160,7 @@
         ]
       },
       {
-        "label": "Toucan, white-throated",
+        "name": "Toucan, white-throated",
         "items": [
           {
             "name": "China Lodging Group, Limited",
@@ -171,7 +171,7 @@
         ]
       },
       {
-        "label": "Red-tailed hawk",
+        "name": "Red-tailed hawk",
         "items": []
       }
     ]
@@ -194,7 +194,7 @@
     "password": "waXfGLD8NS",
     "inventories": [
       {
-        "label": "Boa, columbian rainbow",
+        "name": "Boa, columbian rainbow",
         "items": [
           {
             "name": "Social Reality, Inc.",
@@ -212,7 +212,7 @@
     "password": "jGrAIaBXTU",
     "inventories": [
       {
-        "label": "Pintail, white-cheeked",
+        "name": "Pintail, white-cheeked",
         "items": [
           {
             "name": "Forum Merger Corporation",
@@ -229,7 +229,7 @@
         ]
       },
       {
-        "label": "Red-winged blackbird",
+        "name": "Red-winged blackbird",
         "items": [
           {
             "name": "Apollo Global Management, LLC",
@@ -246,7 +246,7 @@
         ]
       },
       {
-        "label": "Manatee",
+        "name": "Manatee",
         "items": [
           {
             "name": "PowerShares KBW Premium Yield Equity REIT Portfolio",
@@ -276,19 +276,19 @@
     "password": "h8c9gZrLN",
     "inventories": [
       {
-        "label": "Turtle (unidentified)",
+        "name": "Turtle (unidentified)",
         "items": []
       },
       {
-        "label": "Baboon, chacma",
+        "name": "Baboon, chacma",
         "items": []
       },
       {
-        "label": "Capuchin, brown",
+        "name": "Capuchin, brown",
         "items": []
       },
       {
-        "label": "Zebra, plains",
+        "name": "Zebra, plains",
         "items": [
           {
             "name": "Nuveen AMT-Free Municipal Value Fund",
@@ -311,7 +311,7 @@
         ]
       },
       {
-        "label": "Hartebeest, coke's",
+        "name": "Hartebeest, coke's",
         "items": [
           {
             "name": "Titan Pharmaceuticals, Inc.",
@@ -341,7 +341,7 @@
     "password": "vP3ClGS00BM",
     "inventories": [
       {
-        "label": "Chipmunk, least",
+        "name": "Chipmunk, least",
         "items": [
           {
             "name": "Arena Pharmaceuticals, Inc.",
@@ -352,19 +352,19 @@
         ]
       },
       {
-        "label": "Grey lourie",
+        "name": "Grey lourie",
         "items": []
       },
       {
-        "label": "Phalarope, grey",
+        "name": "Phalarope, grey",
         "items": []
       },
       {
-        "label": "Brocket, brown",
+        "name": "Brocket, brown",
         "items": []
       },
       {
-        "label": "Bird (unidentified)",
+        "name": "Bird (unidentified)",
         "items": [
           {
             "name": "Quidel Corporation",

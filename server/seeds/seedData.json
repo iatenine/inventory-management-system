@@ -1,0 +1,292 @@
+{
+  "users": [
+    {
+      "username": "msilcocks0",
+      "email": "dduckworth0@istockphoto.com",
+      "password": "iLlL2vUh"
+    },
+    {
+      "username": "dmarczyk1",
+      "email": "agotfrey1@weather.com",
+      "password": "6qij7Ia"
+    },
+    {
+      "username": "woblein2",
+      "email": "mpolet2@ox.ac.uk",
+      "password": "xZeKmJJt"
+    },
+    {
+      "username": "jtarbatt3",
+      "email": "dfrensch3@odnoklassniki.ru",
+      "password": "te9p5eFWzVh4"
+    },
+    {
+      "username": "mvears4",
+      "email": "qsheehan4@woothemes.com",
+      "password": "Fl1sHN"
+    },
+    {
+      "username": "sochterlonie5",
+      "email": "mtunnicliff5@tamu.edu",
+      "password": "eQxO2wHUVF8"
+    },
+    {
+      "username": "cjelphs6",
+      "email": "dnuss6@xinhuanet.com",
+      "password": "uw2R7UlrX2q"
+    },
+    {
+      "username": "kcosely7",
+      "email": "vclemens7@businessweek.com",
+      "password": "gSHT8drven"
+    }
+  ],
+
+  "inventories": [
+    {
+      "name": "Lotlux"
+    },
+    {
+      "name": "Konkluxt"
+    },
+    {
+      "name": "Veribet"
+    },
+    {
+      "name": "Konklux"
+    },
+    {
+      "name": "Aerified"
+    },
+    {
+      "name": "It"
+    },
+    {
+      "name": "Flfdsexidy"
+    },
+    {
+      "name": "Sub-Ex"
+    },
+    {
+      "name": "Vagram"
+    },
+    {
+      "name": "Rank"
+    },
+    {
+      "name": "Prodder"
+    },
+    {
+      "name": "Cookley"
+    },
+    {
+      "name": "Wrapsafe"
+    },
+    {
+      "name": "Quo Lux"
+    },
+    {
+      "name": "Overhold"
+    },
+    {
+      "name": "Bitwolf"
+    },
+    {
+      "name": "Temp"
+    },
+    {
+      "name": "Y-find"
+    },
+    {
+      "name": "Patnnier"
+    },
+    {
+      "name": "Flexidy"
+    },
+    {
+      "name": "Ronstring"
+    },
+    {
+      "name": "Gembucket"
+    },
+    {
+      "name": "Mat Lam Tam"
+    },
+    {
+      "name": "Pannier"
+    },
+    {
+      "name": "Aerifised"
+    },
+    {
+      "name": "Solarbreeze"
+    },
+    {
+      "name": "Solarbreezesdf"
+    },
+    {
+      "name": "Duobam"
+    },
+    {
+      "name": "Duobaam"
+    },
+    {
+      "name": "Zathin"
+    }
+  ],
+
+  "items": [
+    [
+      {
+        "name": "Twitternation",
+        "quantity": 104,
+        "image": "TurpisIntegerAliquet.xls"
+      },
+      {
+        "name": "Yadel",
+        "quantity": 72,
+        "image": "ConsequatNullaNisl.mp3"
+      },
+      {
+        "name": "Photofeed",
+        "quantity": 88,
+        "image": "Congue.avi"
+      },
+      {
+        "name": "Divape",
+        "quantity": 83,
+        "image": "Duis.tiff"
+      },
+      {
+        "name": "Blogpad",
+        "quantity": 80,
+        "image": "Hac.jpeg"
+      },
+      {
+        "name": "Eidel",
+        "quantity": 41,
+        "image": "LuctusCum.ppt"
+      },
+      {
+        "name": "Zoombox",
+        "quantity": 44,
+        "image": "CongueEtiam.avi"
+      },
+      {
+        "name": "Twitterbeat",
+        "quantity": 101,
+        "image": "PrimisIn.ppt"
+      },
+      {
+        "name": "Yadel",
+        "quantity": 37,
+        "image": "ProinLeoOdio.doc"
+      },
+      {
+        "name": "Ozu",
+        "quantity": 105,
+        "image": "PretiumIaculisDiam.xls"
+      },
+      {
+        "name": "LiveZ",
+        "quantity": 69,
+        "image": "EnimLoremIpsum.ppt"
+      },
+      {
+        "name": "Yozio",
+        "quantity": 52,
+        "image": "AmetSapien.doc"
+      },
+      {
+        "name": "Skipstorm",
+        "quantity": 96,
+        "image": "FelisEu.png"
+      },
+      {
+        "name": "Mudo",
+        "quantity": 70,
+        "image": "Nisl.pdf"
+      },
+      {
+        "name": "Skipstorm",
+        "quantity": 88,
+        "image": "Augue.tiff"
+      },
+      {
+        "name": "Trilith",
+        "quantity": 88,
+        "image": "InHac.mp3"
+      },
+      {
+        "name": "Photobean",
+        "quantity": 50,
+        "image": "LobortisEstPhasellus.avi"
+      },
+      {
+        "name": "Yombu",
+        "quantity": 100,
+        "image": "CurabiturInLibero.gif"
+      },
+      {
+        "name": "Skilith",
+        "quantity": 88,
+        "image": "ParturientMontes.xls"
+      },
+      {
+        "name": "Jabbersphere",
+        "quantity": 70,
+        "image": "Ac.jpeg"
+      },
+      {
+        "name": "Dabfeed",
+        "quantity": 76,
+        "image": "Lacus.mp3"
+      },
+      {
+        "name": "Omba",
+        "quantity": 102,
+        "image": "JustoLaciniaEget.avi"
+      },
+      {
+        "name": "Miboo",
+        "quantity": 18,
+        "image": "Nam.mp3"
+      },
+      {
+        "name": "Buzzdog",
+        "quantity": 32,
+        "image": "Vestibulum.mp3"
+      },
+      {
+        "name": "Skaboo",
+        "quantity": 15,
+        "image": "Duis.jpeg"
+      },
+      {
+        "name": "Npath",
+        "quantity": 50,
+        "image": "LaciniaNisi.avi"
+      },
+      {
+        "name": "Rhynoodle",
+        "quantity": 39,
+        "image": "Lacinia.avi"
+      },
+      {
+        "name": "Divape",
+        "quantity": 28,
+        "image": "EgetNuncDonec.xls"
+      },
+      {
+        "name": "Quimba",
+        "quantity": 26,
+        "image": "ConsequatUt.xls"
+      },
+      {
+        "name": "Zoombeat",
+        "quantity": 66,
+        "image": "SitAmet.ppt"
+      }
+    ]
+  ]
+}
