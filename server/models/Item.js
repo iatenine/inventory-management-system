@@ -14,7 +14,7 @@ const itemSchema = new Schema({
     {
       type: String,
       required: true,
-      default: 'General'
+      default: 'General',
     },
   ],
   image: {
