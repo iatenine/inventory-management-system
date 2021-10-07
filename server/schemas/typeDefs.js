@@ -42,6 +42,14 @@ const typeDefs = gql`
     image: String
   }
 
+  input updateItem {
+    inventoryId: ID
+    name: String
+    quantity: Int
+    category: [String]
+    image: String
+  }
+
 
   type Query {
     user(_id: ID!): User!
@@ -51,7 +59,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(email: String!, password: String!) : Auth
+    login(username: String!, password: String!) : Auth
     createUser(username: String!, email: String!, password: String!): Auth
     deleteUser(_id: ID!): User
 
@@ -60,7 +68,7 @@ const typeDefs = gql`
     deleteInventory(_id: ID!) : Inventory
 
     createItem(input: newItem! ) : Inventory
-    updateItem(_id: ID!, input: newItem!) : Inventory
+    updateItem(_id: ID!, input: updateItem!) : Inventory
     deleteItem(_id: ID!): Inventory
     
   }

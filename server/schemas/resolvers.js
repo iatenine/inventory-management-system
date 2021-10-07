@@ -80,7 +80,7 @@ Mutation: {
 
   },
   createInventory: async(parent, {input}) => {
-    const createInventory = Inventory.create(input)
+    const createInventory = await Inventory.create(input)
 
     if(!createInventory){
       throw new AuthenticationError("Something went wrong!")
@@ -89,7 +89,7 @@ Mutation: {
     return createInventory
   },
   updateInventory: async (parent, {_id, input }) => {
-    const updateInv = Inventory.findByIdAndUpdate(_id, input, {new: true});
+    const updateInv = await Inventory.findByIdAndUpdate(_id, input, {new: true});
 
     if(!updateInv){
       throw new AuthenticationError("Something went wrong and we couldn't update your Inventory!")
@@ -98,7 +98,7 @@ Mutation: {
     return updateInv;
   },
   deleteInventory: async (parent, {_id}) => {
-    const removeInv = Inventory.remove({_id}, {new: true})
+    const removeInv = await Inventory.remove({_id}, {new: true})
 
     if(!removeInv){
       throw new AuthenticationError("Something went wrong and we couldn't remove your Inventory!")
@@ -108,7 +108,6 @@ Mutation: {
   },
   createItem: async (parent, {input}) => {
     const createItem = await Item.create(input)
-    console.log("Inventory Id" + input.inventoryId)
     const addItto = await Inventory.findByIdAndUpdate( input.inventoryId, { $push: {items: (createItem._id)}}, {new: true})
     
     if(!addItto || !createItem){
@@ -116,8 +115,27 @@ Mutation: {
     }
 
     return addItto
-  }
+  },
+  updateItem: async (parent, {_id, input }) => {
+    const updateItem = await Item.findByIdAndUpdate(_id, input, {new: true});
 
+    if(!updateItem){
+      throw new AuthenticationError("Something went wrong and we couldn't update your Item!")
+    }
+
+    return updateItem;
+  },
+  deleteItem: async (parent, {_id}) => {
+    const removeItem = await Item.remove({_id}, {new: true})
+
+      console.log(removeItem)
+    if(!removeItem){
+      throw new AuthenticationError("Something went wrong and we couldn't remove your Inventory!")
+    }
+
+    return removeItem.deletedCount
+  },
+  
 },
 
 };
