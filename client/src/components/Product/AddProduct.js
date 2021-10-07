@@ -15,7 +15,7 @@ export default function addProduct () {
             description,
             quantity,
         ]
-        let itemAllFilled = itemFields
+        let itemAllFilled = items
         .map(field => {
             return helper.isEmpty(field)
         })
@@ -30,32 +30,29 @@ export default function addProduct () {
         }
     }
 };
+// If stock?
 render () {
-    return (
-       <div className="addWarehouse__tablet">
-          <h1>Add New</h1>
-          <form onSubmit={this.submitHandler}>
-            <>
-              <div className="addWarehouse__header">Warehouse</div>
-              <input
-                className="addWarehouse"
-                type="text"
-                name="warehouse"
-                placeholder="Name"
-              />
-            </>
-            </div>
-            <div className="addWarehouse__buttons">
-              <button>SAVE</button>
-              <button
-                type="button"
-                onClick={this.props.SOMETHING}
-                className="cancel-button"
-              > cancel
-             </button>
-             </div>
-            </div>
-        </div>
-    </form>
-    );
+        return (
+            <div className="addWarehouse__tablet">
+               <h1>Add New</h1>
+               <form onSubmit={this.submitHandler}>
+                   <div className="addWarehouse__header">Warehouse</div>
+                   <input
+                     className="addWarehouse"
+                     type="text"
+                     name="warehouse"
+                     placeholder="Name"
+                   />
+                 <div className="addWarehouse__buttons">
+                   <button>SAVE</button>
+                   <button
+                     type="button"
+                     onClick={this.props.SOMETHING}
+                     className="cancel-button"
+                   > cancel
+                  </button>
+                  </div>
+           </form>
+     </div>
+         );
 }

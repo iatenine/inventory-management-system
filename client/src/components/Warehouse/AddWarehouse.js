@@ -17,7 +17,6 @@ render () {
        <div className="addWarehouse__tablet">
           <h1>Add New</h1>
           <form onSubmit={this.submitHandler}>
-            <>
               <div className="addWarehouse__header">Warehouse</div>
               <input
                 className="addWarehouse"
@@ -25,8 +24,6 @@ render () {
                 name="warehouse"
                 placeholder="Name"
               />
-            </>
-            </div>
             <div className="addWarehouse__buttons">
               <button>SAVE</button>
               <button
@@ -36,8 +33,7 @@ render () {
               > cancel
              </button>
              </div>
-            </div>
-        </div>
-    </form>
+      </form>
+</div>
     );
 }
