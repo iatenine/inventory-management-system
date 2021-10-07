@@ -1,7 +1,7 @@
 import React from "react";
 // display
 
-export default function addWearhouse () {
+export default function addWarehouse () {
     submitHandler = event => {
         event.preventDefault ();
         let {
