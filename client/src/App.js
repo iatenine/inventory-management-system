@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Boilerplate
 import Home from "./pages/home";
+// add css styling
 import "./App.css";
 // import Profile from "./pages/Profile";
 // import Header from "./components/Header";
