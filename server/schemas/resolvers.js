@@ -42,17 +42,17 @@ Mutation: {
     })
 
     if(!profile){
-      throw new AutenticationError("No profile with those credentials is found!")
+      throw new AuthenticationError("No profile with those credentials is found!")
     }
 
-    const correctPw = await User.isCorrectPassword(password)
+    const correctPw = await profile.isCorrectPassword(password)
 
     if(!correctPw){
       throw new AuthenticationError("Incorrect password!")
     }
-
+    
     const token = signToken(profile)
-    return {token, profile}
+    return {token, user: profile}
   },
   createUser: async (parent, {username, email, password}) => {
     const newUser = await User.create({username, email, password})
@@ -62,11 +62,61 @@ Mutation: {
     }
 
     const token = signToken(newUser)
-    return {token, newUser}
+    return {token, user: newUser}
 
+  },
+
+  deleteUser: async (parent, args, context) => {
+    console.log(args + " " + args._id)
+    const removeUser = await User.remove({
+      _id: args._id
+    }, {new: true})
+
+    if(!removeUser) {
+      throw new AuthenticationError("Couldn't find user with those credentials!")
+    }
+    return {User: removeUser}
+
+
+  },
+  createInventory: async(parent, {input}) => {
+    const createInventory = Inventory.create(input)
+
+    if(!createInventory){
+      throw new AuthenticationError("Something went wrong!")
+    }
+
+    return createInventory
+  },
+  updateInventory: async (parent, {_id, input }) => {
+    const updateInv = Inventory.findByIdAndUpdate(_id, input, {new: true});
+
+    if(!updateInv){
+      throw new AuthenticationError("Something went wrong and we couldn't update your Inventory!")
+    }
+
+    return updateInv;
+  },
+  deleteInventory: async (parent, {_id}) => {
+    const removeInv = Inventory.remove({_id}, {new: true})
+
+    if(!removeInv){
+      throw new AuthenticationError("Something went wrong and we couldn't remove your Inventory!")
+    }
+
+    return removeInv
+  },
+  createItem: async (parent, {input}) => {
+    const createItem = await Item.create(input)
+    console.log("Inventory Id" + input.inventoryId)
+    const addItto = await Inventory.findByIdAndUpdate( input.inventoryId, { $push: {items: (createItem._id)}}, {new: true})
+    
+    if(!addItto || !createItem){
+      throw new AuthenticationError("Something went wrong!")
+    }
+
+    return addItto
   }
-
-
 
 },
 
