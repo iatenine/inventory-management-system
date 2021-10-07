@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Boilerplate
 import Home from "./pages/home";
+import Login from "./pages/login";
 // import Profile from "./pages/Profile";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
@@ -18,6 +19,9 @@ function App() {
             {/* Define routes to render different page components at different paths */}
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
             </Route>
             {/* Define a route that will take in variable data */}
             <Route exact path="/profiles/:profileId">
