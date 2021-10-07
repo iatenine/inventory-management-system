@@ -93,7 +93,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - [Semantic UI](https://semantic-ui.com/introduction/getting-started.html)<br />
   command-line: `npm i semantic-ui-react`<br />
   Be sure to have node.js, homebrew, and gulp installed before using Semantic
-  'npm 
+  'npm
 
 ## Learn more
 
@@ -104,6 +104,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - [Mongoose Documentation](http://mongoosejs.com/docs/guide.html)
 - [routes on Node.js and MongoDB](https://www.geeksforgeeks.org/restfull-routes-on-node-js-and-mongodb/)
 - To learn React, check out the [React documentation](https://reactjs.org/).
+  https://unsplash.com/s/photos/inventory
 
 ## Heroku
 
