@@ -25,8 +25,16 @@ const resolvers = {
 
       return users
     }, 
+    inventory: async (parent, args, context) => {
+      const inventories = await Inventory.findOne({_id: args._id}).populate("items")
+      if(!inventories){
+        throw new AuthenticationError(inventories)
+      }
 
-}
+      return inventories
+    },
+},
+
   // Mutation: {
   //   // createMatchup: async (parent, args) => {
   //   //   const matchup = await Matchup.create(args);
