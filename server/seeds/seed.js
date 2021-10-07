@@ -19,6 +19,7 @@ db.once("open", async () => {
   await Item.deleteMany({});
 
   // Seed users, inventories and items from JSON
+  // await User.create(users[0]);
   await User.insertMany(users);
   await Inventory.insertMany(inventories);
   await Item.insertMany(items);
