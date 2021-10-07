@@ -1,10 +1,12 @@
+// this is the Root Page (contains the application/like main HB)
 import React from "react";
 // import { Blank } from "Blank";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// Boilerplate
 import Home from "./pages/home";
-// import Profile from "./pages/Profile";
+import Login from "./pages/login";
+import Register from "./pages/register";
+// to be used later -- dont forget to export
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
 
@@ -18,6 +20,14 @@ function App() {
             {/* Define routes to render different page components at different paths */}
             <Route exact path="/">
               <Home />
+            </Route>
+
+            <Route exact path="/login">
+              <Login />
+            </Route>
+
+            <Route exact path="/register">
+              <Register />
             </Route>
             {/* Define a route that will take in variable data */}
             <Route exact path="/profiles/:profileId">

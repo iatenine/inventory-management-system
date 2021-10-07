@@ -1,4 +1,8 @@
 {
+  "name": "root-json",
+  "optionalDependencies": {
+    "fsevents": "2.3.2"
+  },
   "dependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.2",
@@ -10,6 +14,7 @@
   "scripts": {
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
+    "start": "cd server && npm run start",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   }
