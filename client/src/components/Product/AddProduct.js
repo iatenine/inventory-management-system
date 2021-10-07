@@ -1,19 +1,19 @@
 import React from "react";
 // display
 
-export default function addProduct() {
-  submitHandler = (event) => {
-    event.preventDefault();
-    let { productId, name, description } = event.target;
-    let items = [productId, name, description, quantity];
-    if (itemAllFilled) {
-      const itemObj = {
-        productId: productId.value.trim(),
-        name: name.value.trim(),
-        description: description.value.trim(),
-      };
-    }
-  };
+// export default function addProduct() {
+//   submitHandler = (event) => {
+//     event.preventDefault();
+//     let { productId, name, description } = event.target;
+//     let items = [productId, name, description, quantity];
+//     if (itemAllFilled) {
+//       const itemObj = {
+//         productId: productId.value.trim(),
+//         name: name.value.trim(),
+//         description: description.value.trim(),
+//       };
+//     }
+//   };
   // If stock?
   return (
     <div className="addWarehouse__tablet">
