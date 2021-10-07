@@ -1,9 +1,11 @@
+// this is the Root Page (contains the application/like main HB)
 import React from "react";
 // import { Blank } from "Blank";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Boilerplate
 import Home from "./pages/home";
+import "./App.css";
 // import Profile from "./pages/Profile";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";

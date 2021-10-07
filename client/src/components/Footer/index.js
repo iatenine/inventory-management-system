@@ -24,6 +24,7 @@ const homepageFooter = (props) => (
     <div id="box3">
       <div>
         <div className="bottom-title">Heroku</div>
+        {/* INSERT HEROKU LINK HERE */}
         <a href="https://SOMETHING.herokuapp.com">Deploy Link</a>
       </div>
     </div>
