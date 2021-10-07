@@ -35,20 +35,40 @@ const resolvers = {
     },
 },
 
-  // Mutation: {
-  //   // createMatchup: async (parent, args) => {
-  //   //   const matchup = await Matchup.create(args);
-  //   //   return matchup;
-  //   // },
-  //   // createVote: async (parent, { _id, techNum }) => {
-  //   //   const vote = await Matchup.findOneAndUpdate(
-  //   //     { _id },
-  //   //     { $inc: { [`tech${techNum}_votes`]: 1 } },
-  //   //     { new: true }
-  //   //   );
-  //   //   return vote;
-  //   // },
-  // },
+Mutation: {
+  login: async (parent, {email, username, password}) => {
+    const profile = await User.findOne({
+      $or: [{username}, {email}]
+    })
+
+    if(!profile){
+      throw new AutenticationError("No profile with those credentials is found!")
+    }
+
+    const correctPw = await User.isCorrectPassword(password)
+
+    if(!correctPw){
+      throw new AuthenticationError("Incorrect password!")
+    }
+
+    const token = signToken(profile)
+    return {token, profile}
+  },
+  createUser: async (parent, {username, email, password}) => {
+    const newUser = await User.create({username, email, password})
+
+    if(!newUser){
+      throw new AuthenticationError("Something went wrong!")
+    }
+
+    const token = signToken(newUser)
+    return {token, newUser}
+
+  }
+
+
+
+},
 
 };
 module.exports = resolvers;

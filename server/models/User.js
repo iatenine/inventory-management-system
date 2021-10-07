@@ -1,8 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require('bcrypt')
 
-const inventorySchema = require('./Inventory');
-
 const userSchema = new Schema({
   username: {
     type: String,
@@ -23,10 +21,23 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Inventory'
   }],
+
+  
 });
 
+console.log("Hi i'm outside");
 userSchema.pre('save', async function (next) {
-  if(this.isNew || this.isModified('password')) {
+  if(this.password || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds)
+  }
+
+  next()
+})
+
+userSchema.pre('insertMany', async function (next) {
+  console.log("Hi i'm inside")
+  if(this.password || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds)
   }
@@ -35,7 +46,7 @@ userSchema.pre('save', async function (next) {
 })
 
 userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password)
+  return await bcrypt.compare(password, this.password)
 }
 
 const User = model("User", userSchema);

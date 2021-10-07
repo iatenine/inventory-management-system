@@ -55,3 +55,4 @@ export const QUERY_CATEGORIES = gql`
     }
   }
 `;
+

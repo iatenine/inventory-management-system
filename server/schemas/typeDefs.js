@@ -32,6 +32,7 @@ const typeDefs = gql`
     user(_id: ID!): User!
     getUsers: [User]
     inventory(_id: ID!): Inventory!
+    getItems: [Item]
   }
 
   type Mutation {
