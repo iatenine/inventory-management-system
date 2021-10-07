@@ -132,7 +132,7 @@ Mutation: {
     if(!removeItem){
       throw new AuthenticationError("Something went wrong and we couldn't remove your Inventory!")
     }
-
+    // Need to fix this to return something and not error out
     return removeItem.deletedCount
   },
   
