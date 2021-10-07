@@ -1,5 +1,6 @@
 const { gql } = require("apollo-server-express");
 
+
 const typeDefs = gql`
   type Auth {
     token: ID!
@@ -23,14 +24,14 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     quantity: String!
-    catergory: [String!]
+    category: [String!]
     image: String!
   }
 
   type Query {
     user(_id: ID!): User!
     getUsers: [User]
-    inventory: Inventory!
+    inventory(_id: ID!): Inventory!
   }
 
   type Mutation {
