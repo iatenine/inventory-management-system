@@ -4,7 +4,6 @@
     "fsevents": "2.3.2"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.2",
     "@types/react": "^17.0.27",
