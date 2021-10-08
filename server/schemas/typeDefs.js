@@ -69,7 +69,7 @@ const typeDefs = gql`
 
     createItem(input: newItem! ) : Inventory
     updateItem(_id: ID!, input: updateItem!) : Inventory
-    deleteItem(_id: ID!): Inventory
+    deleteItem(_id: ID!): Int
     
   }
 `;
