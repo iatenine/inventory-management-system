@@ -1,25 +1,27 @@
 import React from "react";
-import { 
-ApolloClient,
-ApolloProvider,
-createHttpLink,
-InMemoryCache,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import {
+  ApolloClient,
+  ApolloProvider,
+  createHttpLink,
+  InMemoryCache,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import { InventoryDashboard } from "./pages/inventoryDashboard";
+import { ItemDashboard } from "./pages/itemDashboard";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql'
-})
+  uri: "http://localhost:3001/graphql",
+});
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token')
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
@@ -51,6 +53,14 @@ function App() {
 
             <Route exact path="/register">
               <Register />
+            </Route>
+
+            <Route exact path="/inventory-dashboard">
+              <InventoryDashboard />
+            </Route>
+
+            <Route exact path="/item-dashboard">
+              <ItemDashboard />
             </Route>
             {/* Define a route that will take in variable data */}
             <Route exact path="/profiles/:profileId">
