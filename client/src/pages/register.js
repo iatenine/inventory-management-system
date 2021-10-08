@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import { useMutation } from "@apollo/client";
-// import Auth from "../utils/auth";
-// import { ADD_USER } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
+import Auth from "../utils/auth";
+import { ADD_USER } from "../utils/mutations";
 
 function Signup(props) {
   //   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -30,7 +30,6 @@ function Signup(props) {
   //     });
   //   };
 
-  // Add onsubmit!
   return (
     <div className="ui center aligned container">
       {/* <Link to="/login">← Go to Login</Link> */}

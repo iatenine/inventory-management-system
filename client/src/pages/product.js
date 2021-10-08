@@ -1,11 +1,10 @@
-// Item Name
-// Update Category
-// Image
-// quantitycreate/update
-// delete
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
 
 export const Product = () => {
-  return console.log("hello");
+  return <h1>Hello World</h1>;
+
+  //   image code
   // <div className="blurring dimmable image">
   //   <div className="ui dimmer">
   //     <div className="content">
@@ -18,37 +17,9 @@ export const Product = () => {
   // </div>
 };
 
-// example code
-// return (
-//   <>
-//     {currentProduct && cart ? (
-//       <div className="container my-1">
-//         <Link to="/">← Back to Products</Link>
-
-//         <h2>{currentProduct.name}</h2>
-
-//         <p>{currentProduct.description}</p>
-
-//         <p>
-//           <strong>Price:</strong>${currentProduct.price}{" "}
-//           <button onClick={addToCart}>Add to Cart</button>
-//           <button
-//             disabled={!cart.find((p) => p._id === currentProduct._id)}
-//             onClick={removeFromCart}
-//           >
-//             Remove from Cart
-//           </button>
-//         </p>
-
-//         <img
-//           src={`/images/${currentProduct.image}`}
-//           alt={currentProduct.name}
-//         />
-//       </div>
-//     ) : null}
-//     {loading ? <img src={spinner} alt="loading" /> : null}
-//     <Cart />
-//   </>
-// );
-
 export default Product;
+// Item Name
+// Update Category
+// Image
+// quantitycreate/update
+// delete
