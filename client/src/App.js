@@ -1,6 +1,6 @@
-// this is the Root Page (contains the application/like main HB)
 import React from "react";
-import { ApolloClient,
+import { 
+ApolloClient,
 ApolloProvider,
 createHttpLink,
 InMemoryCache,
@@ -11,16 +11,15 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 })
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token')
-
   return {
     headers: {
       ...headers,
