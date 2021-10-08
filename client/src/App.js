@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import Product from "./pages/product";
 // to be used later -- dont forget to export
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
@@ -29,6 +30,11 @@ function App() {
             <Route exact path="/register">
               <Register />
             </Route>
+
+            <Route exact path="/product">
+              <Product />
+            </Route>
+
             {/* Define a route that will take in variable data */}
             <Route exact path="/profiles/:profileId">
               {/* <Profile /> */}

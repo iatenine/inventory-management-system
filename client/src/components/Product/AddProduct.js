@@ -1,5 +1,6 @@
-import React from "react";
-// display
+// import React from "react";
+// import update from "../../semantic/tasks/admin/components/update";
+// // display
 
 // export default function addProduct() {
 //   submitHandler = (event) => {
@@ -14,30 +15,28 @@ import React from "react";
 //       };
 //     }
 //   };
-  // If stock?
-  return (
-    <div className="addWarehouse__tablet">
-      <h1>Add New</h1>
-      <form onSubmit={this.submitHandler}>
-        <div className="addWarehouse__header">Warehouse</div>
-        <input
-          className="addWarehouse"
-          type="text"
-          name="warehouse"
-          placeholder="Name"
-        />
-        <div className="addWarehouse__buttons">
-          <button>SAVE</button>
-          <button
-            type="button"
-            onClick={this.props.SOMETHING}
-            className="cancel-button"
-          >
-            {" "}
-            cancel
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-}
+
+//   <div className="addWarehouse__tablet">
+//     <h1>Add New</h1>
+//     <form onSubmit={this.submitHandler}>
+//       <div className="addWarehouse__header">Warehouse</div>
+//       <input
+//         className="addWarehouse"
+//         type="text"
+//         name="warehouse"
+//         placeholder="Name"
+//       />
+//       <div className="addWarehouse__buttons">
+//         <button>SAVE</button>
+//         <button
+//           type="button"
+//           onClick={this.props.SOMETHING}
+//           className="cancel-button"
+//         >
+//           {" "}
+//           cancel
+//         </button>
+//       </div>
+//     </form>
+//   </div>
+// );
