@@ -13,12 +13,20 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import { InventoryDashboard } from "./pages/inventoryDashboard";
 import { ItemDashboard } from "./pages/itemDashboard";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
 });
+
+const NavProps = {
+  loggedIn: true,
+  logout: () => {
+    console.log("Logout placeholder function");
+  },
+};
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -38,6 +46,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Header />
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           {/* <Header /> */}
@@ -70,6 +79,8 @@ function App() {
           {/* <Footer /> */}
         </div>
       </Router>
+      <Navbar {...NavProps} />
+      <Footer />
     </ApolloProvider>
   );
 }

@@ -1,18 +1,10 @@
 import React from "react";
 // Import React Router Link component for internal hyperlinks
 
-const homepageFooter = (props) => (
+const homepageFooter = () => (
   <div className="bottom-style">
-    <div id="box1">
-      <div>
-        <div className="bottom-title">TADA</div>
-        <div className="bottom-contents"></div>
-      </div>
-    </div>
-
     <div id="box2">
       <div>
-        <div className="bottom-title">Github</div>
         <a
           target="blank"
           href="https://github.com/iatenine/inventory-management-system"
@@ -23,8 +15,6 @@ const homepageFooter = (props) => (
     </div>
     <div id="box3">
       <div>
-        <div className="bottom-title">Heroku</div>
-        {/* INSERT HEROKU LINK HERE */}
         <a href="https://SOMETHING.herokuapp.com">Deploy Link</a>
       </div>
     </div>
