@@ -1,5 +1,6 @@
 import React from "react";
 import InventoryCard from "../components/InventoryCard/inventoryCard";
+import { Link } from "react-router-dom";
 
 const inventory = {
   name: "Inventory",
@@ -29,9 +30,11 @@ export const InventoryDashboard = () => {
           {/* add iventory button */}
           <div className="row">
             <div className="column">
-              <button className="ui fluid primary button" type="submit">
-                Add Inventory
-              </button>
+              <Link to="/add-inventory">
+                <button className="ui fluid primary button" type="submit">
+                  Add Inventory
+                </button>
+              </Link>
             </div>
           </div>
         </div>
