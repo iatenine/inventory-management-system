@@ -18,34 +18,22 @@ query User($_id: ID!) {
   }
 }
 `;
-// export const QUERY_PRODUCTS = gql`
-//   query getProducts($category: ID) {
-//     products(category: $category) {
-//       _id
-//       name
-//       quantity
-//       image
-//       category {
-//         _id
-//         name
-//       }
-//     }
-//   }
-// `;
 
-// export const QUERY_ALL_PRODUCTS = gql`
-//   {
-//     products {
-//       _id
-//       name
-//       quantity
-//       category {
-//         _id
-//         name
-//       }
-//     }
-//   }
-// `;
+export const QUERY_SINGLE_INVENTORY = gql`
+query inventory($_id: ID!){
+  inventory(_id: $_id){
+  	name
+    items {
+      _id
+      name
+      quantity
+      image
+      category
+    }
+  }
+}
+`
+
 
 // export const QUERY_CATEGORIES = gql`
 //   {
