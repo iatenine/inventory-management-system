@@ -1,10 +1,15 @@
 import React from "react";
-import Cards from "../components/Card/card";
+import InventoryCard from "../components/InventoryCard/inventoryCard";
 
-const item = {
-  name: "Hello",
-  quantity: 442,
-  categories: ["Dairy", "Beverages"],
+const inventory = {
+  name: "Inventory",
+  items: [
+    "hello",
+    {
+      name: "hello",
+      quantity: "1",
+    },
+  ],
 };
 
 export const InventoryDashboard = () => {
@@ -12,12 +17,12 @@ export const InventoryDashboard = () => {
     // dropdown
     <div>
       <div className="ui center aligned container">
-        <h1>Items in |ITEM NAME HERE|</h1>
+        <h1>Inventory Dashboard</h1>
         <div className="ui one column grid">
           {/* map over items and create like this */}
           <div className="row">
             <div className="column">
-              <Cards {...item} />
+              <InventoryCard {...inventory} />
             </div>
           </div>
           {/* end here */}
