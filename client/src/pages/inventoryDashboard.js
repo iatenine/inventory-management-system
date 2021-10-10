@@ -1,7 +1,22 @@
 import React from "react";
 import Cards from "../components/Card/card";
 
+import { useQuery } from '@apollo/client'
+import { useMutation } from "@apollo/client"; 
+
+import { QUERY_USER } from "../utils/queries";
+import Auth from '../utils/auth'
+
 export const InventoryDashboard = () => {
+
+
+    console.log(Auth.getProfile)
+
+
+
+
+
+
   return (
     // dropdown
     <div>
