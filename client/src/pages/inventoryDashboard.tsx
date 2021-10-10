@@ -1,12 +1,25 @@
 import React from "react";
-import Cards from "../components/Card/card";
+import InventoryCard from "../components/InventoryCard/inventoryCard";
 
+<<<<<<< HEAD
 import { useQuery } from '@apollo/client'
 import { useMutation } from "@apollo/client"; 
 
 import { QUERY_USER } from "../utils/queries";
 import Auth from '../utils/auth'
 
+=======
+const inventory = {
+  name: "Inventory",
+  items: [
+    "hello",
+    {
+      name: "hello",
+      quantity: "1",
+    },
+  ],
+};
+>>>>>>> main
 
 export const InventoryDashboard = () => {
 
@@ -26,12 +39,20 @@ export const InventoryDashboard = () => {
     // dropdown
     <div>
       <div className="ui center aligned container">
+<<<<<<< HEAD
         <h1></h1>
+=======
+        <h1>Inventory Dashboard</h1>
+>>>>>>> main
         <div className="ui one column grid">
           {/* map over items and create like this */}
           <div className="row">
             <div className="column">
+<<<<<<< HEAD
               {/* <Cards {...item} /> */}
+=======
+              <InventoryCard {...inventory} />
+>>>>>>> main
             </div>
           </div>
           {/* end here */}
