@@ -1,5 +1,5 @@
 import React from "react";
-import Cards from "../components/Cards/cards";
+import Cards from "../components/Card/card";
 
 export const ItemDashboard = () => {
   return (
