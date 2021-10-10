@@ -9,6 +9,7 @@ interface IInventoryCardProps {
 const InventoryCard: React.FC<IInventoryCardProps> = (
   props: IInventoryCardProps
 ) => {
+  console.log(props)
   return (
     <div className="ui special cards">
       <div className="card">

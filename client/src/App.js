@@ -71,12 +71,8 @@ function App() {
               <InventoryDashboard />
             </Route>
 
-            <Route exact path="/item-dashboard">
+            <Route exact path="/inventory/:inventoryId">
               <ItemDashboard />
-            </Route>
-            {/* Define a route that will take in variable data */}
-            <Route exact path="/profiles/:profileId">
-              {/* <Profile /> */}
             </Route>
           </div>
           {/* <Footer /> */}
