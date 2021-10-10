@@ -1,5 +1,8 @@
 import React from "react";
 import Cards from "../components/Card/card";
+import { QUERY_SINGLE_INVENTORY} from '../utils/queries'
+import { useParams } from "react-router-dom";
+import { useQuery, useMutation } from "@apollo/client";
 
 const item = {
   name: "Hello",
@@ -7,7 +10,24 @@ const item = {
   categories: ["Dairy", "Beverages"],
 };
 
+
 export const ItemDashboard = () => {
+
+  const { inventoryId } = useParams();
+
+  const {loading, data} = useQuery(QUERY_SINGLE_INVENTORY, {
+    variables: {_id: inventoryId}
+  })
+
+  console.log(data)
+  if(loading){
+    <div>Loading...</div>
+  }
+
+  const invItems = data?.inventory.items || {}
+
+  console.log(invItems)
+
   return (
     // dropdown
     <div>
@@ -31,15 +51,9 @@ export const ItemDashboard = () => {
           {/* map over items and create like this */}
           <div className="row">
             <div className="column">
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
-              <Cards {...item} />
+            {invItems.map((item) => {
+              return <Cards {...item} />
+            })}
             </div>
           </div>
           {/* end here */}
@@ -47,7 +61,7 @@ export const ItemDashboard = () => {
           <div className="row">
             <div className="column">
               <button className="ui fluid primary button" type="submit">
-                Add Item
+                Update Item
               </button>
             </div>
           </div>
