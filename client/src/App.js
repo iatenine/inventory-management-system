@@ -25,13 +25,6 @@ const httpLink = createHttpLink({
       : "https://inventory-management-system-0.herokuapp.com/graphql",
 });
 
-const NavProps = {
-  loggedIn: true,
-  logout: () => {
-    console.log("Logout placeholder function");
-  },
-};
-
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
   return {
@@ -82,9 +75,8 @@ function App() {
           </div>
           {/* <Footer /> */}
         </div>
-        <Navbar {...NavProps} />
+        <Footer />
       </Router>
-      <Footer />
     </ApolloProvider>
   );
 }
