@@ -81,8 +81,8 @@ function App() {
           </div>
           {/* <Footer /> */}
         </div>
+        <Navbar {...NavProps} />
       </Router>
-      <Navbar {...NavProps} />
       <Footer />
     </ApolloProvider>
   );
