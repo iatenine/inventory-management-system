@@ -18,7 +18,10 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3001/graphql"
+      : "https://inventory-management-system-0.herokuapp.com/graphql",
 });
 
 const NavProps = {
