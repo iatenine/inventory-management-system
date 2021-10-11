@@ -43,6 +43,7 @@ export const ItemDashboard: React.FC = () => {
                       name: item.name,
                       quantity: item.quantity,
                       categories: item.categories,
+                      _id: item._id,
                     }}
                   />
                 );
