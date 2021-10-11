@@ -24,15 +24,13 @@ export const ItemDashboard = () => {
     <div>Loading...</div>
   }
 
-  const invItems = data?.inventory.items || {}
-
-  console.log(invItems)
+  const invItems = data?.inventory.items || []
 
   return (
     // dropdown
     <div>
       <div className="ui center aligned container">
-        <h1>Items in |INVENTORY NAME HERE|</h1>
+        <h1>Items in {data.inventory.name}</h1>
         <div className="ui compact menu">
           <div className="ui simple dropdown item">
             Dropdown
