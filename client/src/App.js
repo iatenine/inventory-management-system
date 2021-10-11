@@ -16,6 +16,7 @@ import { ItemDashboard } from "./pages/itemDashboard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import AddInventory from "./pages/addInventory";
 
 const httpLink = createHttpLink({
   uri:
@@ -23,13 +24,6 @@ const httpLink = createHttpLink({
       ? "http://localhost:3001/graphql"
       : "https://inventory-management-system-0.herokuapp.com/graphql",
 });
-
-const NavProps = {
-  loggedIn: true,
-  logout: () => {
-    console.log("Logout placeholder function");
-  },
-};
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -71,15 +65,18 @@ function App() {
               <InventoryDashboard />
             </Route>
 
+            <Route exact path="/add-inventory">
+              <AddInventory />
+            </Route>
+
             <Route exact path="/inventory/:inventoryId">
               <ItemDashboard />
             </Route>
           </div>
           {/* <Footer /> */}
         </div>
+        <Footer />
       </Router>
-      <Navbar {...NavProps} />
-      <Footer />
     </ApolloProvider>
   );
 }

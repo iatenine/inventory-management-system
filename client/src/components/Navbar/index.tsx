@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
   loggedIn: boolean;
@@ -8,15 +9,25 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ loggedIn, logout }) => {
   return (
     <nav className="navbar">
-      <button className="nav-button">View Inventories</button>
-      <button className="nav-button">View Items</button>
+      <Link to="/inventory-dashboard">
+        <button className="nav-button">View Inventories</button>
+      </Link>
+
+      <Link to="/item-dashbaord">
+        <button className="nav-button">View Items</button>
+      </Link>
+
       {loggedIn ? (
-        <button className="nav-button" onClick={logout}>
-          Logout
-        </button>
+        <Link to="/">
+          <button className="nav-button" onClick={logout}>
+            Logout
+          </button>
+        </Link>
       ) : (
         // Login button needs to use react-router-dom's Link component to navigate to the login page
-        <button className="nav-button">Login</button>
+        <Link to="/">
+          <button className="nav-button">Login</button>
+        </Link>
       )}
     </nav>
   );

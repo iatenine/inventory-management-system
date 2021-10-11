@@ -57,15 +57,15 @@ const Login = () => {
             <div className="field">
               <label>Password</label>
               <input
-                type="text"
+                type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="******"
                 value={formState.password}
                 onChange={handleChange}
               ></input>
             </div>
             <button className="ui fluid primary button" type="submit">
-              Submit
+              Log In
             </button>
           </form>
         </div>
