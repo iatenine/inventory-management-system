@@ -1,49 +1,31 @@
 import React from "react";
 import Cards from "../components/Card/card";
-import { QUERY_SINGLE_INVENTORY} from '../utils/queries'
+import { QUERY_SINGLE_INVENTORY } from "../utils/queries";
 import { useParams } from "react-router-dom";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
-const item = {
-  name: "Hello",
-  quantity: 442,
-  categories: ["Dairy", "Beverages"],
-};
+export const ItemDashboard: React.FC = () => {
+  // Use the useParams hook to get the id from the url
+  const { inventoryId } = useParams<{ inventoryId: string | undefined }>();
 
+  const { loading, data } = useQuery(QUERY_SINGLE_INVENTORY, {
+    variables: { _id: inventoryId },
+  });
 
-export const ItemDashboard = () => {
+  console.log(data);
+  if (loading) return <div>Loading...</div>;
 
-  const { inventoryId } = useParams();
+  const invItems = data?.inventory.items || {};
+  const invName = data?.inventory.name || "";
 
-  const {loading, data} = useQuery(QUERY_SINGLE_INVENTORY, {
-    variables: {_id: inventoryId}
-  })
-
-  console.log(data)
-  if(loading){
-    <div>Loading...</div>
-  }
-
-  const invItems = data?.inventory.items || {}
-
-  console.log(invItems)
+  console.log("invItems: ", invItems);
 
   return (
     // dropdown
     <div>
       <div className="ui center aligned container">
-        <h1>Items in |INVENTORY NAME HERE|</h1>
-        <div className="ui compact menu">
-          <div className="ui simple dropdown item">
-            Dropdown
-            <i className="dropdown icon"></i>
-            <div className="menu">
-              {/* map over item categories and create like this */}
-              <div className="item">Category 1</div>
-              {/* end here */}
-            </div>
-          </div>
-        </div>
+        <h1>Items in {invName}</h1>
       </div>
 
       <div className="ui center aligned container">
@@ -51,18 +33,29 @@ export const ItemDashboard = () => {
           {/* map over items and create like this */}
           <div className="row">
             <div className="column">
-            {invItems.map((item) => {
-              return <Cards {...item} />
-            })}
+              {invItems.map((item: any, index: number) => {
+                return (
+                  <Cards
+                    key={index}
+                    {...{
+                      name: item.name,
+                      quantity: item.quantity,
+                      categories: item.categories,
+                    }}
+                  />
+                );
+              })}
             </div>
           </div>
           {/* end here */}
           {/* add item button */}
           <div className="row">
             <div className="column">
-              <button className="ui fluid primary button" type="submit">
-                Update Item
-              </button>
+              <Link to={`/addItem/${inventoryId}`}>
+                <button className="ui fluid primary button">
+                  + Add Item to {invName}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
