@@ -25,8 +25,8 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     quantity: Int!
-    category: [String!]
-    image: String!
+    category: [String]
+    image: String
   }
 
   input newInventory {
@@ -34,10 +34,9 @@ const typeDefs = gql`
   }
 
   input newItem {
-    inventoryId: ID!
     name: String!
-    quantity: Int!
-    category: [String!]
+    quantity: Int
+    category: [String]
     image: String
   }
 
@@ -54,7 +53,7 @@ const typeDefs = gql`
     getUsers: [User]
     inventory(_id: ID!): Inventory!
     getItems: [Item]
-    getItem: Item
+    getItem(_id: ID!): Item!
   }
 
   type Mutation {
@@ -62,12 +61,12 @@ const typeDefs = gql`
     createUser(username: String!, email: String!, password: String!): Auth
     deleteUser(_id: ID!): User
 
-    createInventory(input: newInventory!): Inventory
+    createInventory(inventoryId: ID!, input: newInventory!): Inventory
     updateInventory(_id: ID!, input: newInventory!): Inventory
     deleteInventory(_id: ID!): Inventory
 
-    createItem(input: newItem!): Inventory
-    updateItem(_id: ID!, input: updateItem!): Inventory
+    createItem(inventoryId: ID!, input: newItem!): Item
+    updateItem(_id: ID!, input: updateItem!): Item
     deleteItem(_id: ID!): Int
   }
 `;

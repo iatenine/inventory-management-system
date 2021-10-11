@@ -15,7 +15,19 @@ import { ItemDashboard } from "./pages/itemDashboard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AddInventory from "./pages/addInventory";
+import AddItem from "./pages/addItem";
 import UpdateItem from "./pages/updateItem";
+import { onError } from 'apollo-link-error';
+import { ApolloLink } from 'apollo-link';
+
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    console.log('graphQLErrors', graphQLErrors);
+  }
+  if (networkError) {
+    console.log('networkError', networkError);
+  }
+});
 
 const httpLink = createHttpLink({
   uri:
@@ -34,14 +46,14 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const link = ApolloLink.from([errorLink, httpLink])
+
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: authLink.concat(link),
   cache: new InMemoryCache(),
 });
 
 function App() {
-  console.log(Auth.loggedIn());
-
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -75,6 +87,10 @@ function App() {
 
             <Route exact path="/inventory/:inventoryId">
               <ItemDashboard />
+            </Route>
+
+            <Route exact path="/addItem/:inventoryId">
+              <AddItem />
             </Route>
           </div>
         </div>

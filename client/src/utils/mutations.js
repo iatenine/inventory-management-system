@@ -31,8 +31,8 @@ mutation deleteUser ($_id: ID!){
 `;
 
 export const CREATE_INVENTORY = gql`
-mutation createInventory($input: newInventory!){
-  createInventory(input: $input){
+mutation createInventory($inventoryId: ID!, $input: newInventory!){
+  createInventory(inventoryId: $inventoryId, input: $input){
     _id
     name
   }
@@ -56,13 +56,11 @@ mutation deleteInventory($_id: ID!){
 }`;
 
 export const CREATE_ITEM = gql`
-mutation createItem($input: newItem! ){
-  createItem(input: $input){
+mutation createItem($inventoryId: ID!, $input: newItem! ){
+  createItem(inventoryId: $inventoryId, input: $input){
     _id
     name
-    items {
-      _id
-    }
+    quantity
   }
 }
 `;
@@ -71,14 +69,14 @@ export const UPDATE_ITEM = gql`
 mutation updateItem($_id: ID!, $input: updateItem!){
   updateItem(_id: $_id, input: $input){
     _id
+    name
+    quantity
   }
 }
 `;
 
 export const DELETE_ITEM = gql`
 mutation deleteItem($_id: ID!){
-  deleteItem(_id: $_id){
-    name
-  }
+  deleteItem(_id: $_id)
 }
 `;

@@ -12,7 +12,6 @@ export const ItemDashboard: React.FC = () => {
   const { loading, data } = useQuery(QUERY_SINGLE_INVENTORY, {
     variables: { _id: inventoryId },
   });
-
   console.log(data);
   if (loading) return <div>Loading...</div>;
 
@@ -21,6 +20,7 @@ export const ItemDashboard: React.FC = () => {
 
   console.log("invItems: ", invItems);
 
+  console.log(data)
   return (
     // dropdown
     <div>
@@ -48,22 +48,23 @@ export const ItemDashboard: React.FC = () => {
                   />
                 );
               })}
+              <Link className="ui fluid primary button" to={`/addItem/${inventoryId}`}>
+                  + Add Item to {invName}
+              </Link>
+              <br />
+              <br />
+              <br />
             </div>
           </div>
           {/* end here */}
           {/* add item button */}
           <div className="row">
             <div className="column">
-              <Link to={`/addItem/${inventoryId}`}>
-                <button className="ui fluid primary button">
-                  + Add Item to {invName}
-                </button>
-              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div>        
   );
 };
 export default ItemDashboard;

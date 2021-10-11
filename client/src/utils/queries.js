@@ -27,7 +27,6 @@ export const QUERY_SINGLE_INVENTORY = gql`
         _id
         name
         quantity
-        image
         category
       }
     }
@@ -36,7 +35,7 @@ export const QUERY_SINGLE_INVENTORY = gql`
 
 export const QUERY_ITEM = gql`
   query item($_id: ID!) {
-    item(_id: $_id) {
+    getItem(_id: $_id) {
       _id
       name
       quantity

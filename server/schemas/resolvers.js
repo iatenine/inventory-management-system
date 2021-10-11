@@ -100,16 +100,17 @@ const resolvers = {
       }
       return { User: removeUser };
     },
-    createInventory: async (parent, { input }) => {
+    createInventory: async (parent, { inventoryId, input }) => {
       const createInventory = await Inventory.create(input);
-
+      const addtoUs = await User.findByIdAndUpdate(inventoryId,
+      { $push: {inventories: createInventory._id} }, {new: true})
       if (!createInventory) {
         throw new AuthenticationError("Something went wrong!");
       }
 
       return createInventory;
     },
-    updateInventory: async (parent, { _id, input }) => {
+    updateInventory: async (parent, { _id, input },) => {
       const updateInv = await Inventory.findByIdAndUpdate(_id, input, {
         new: true,
       });
@@ -133,10 +134,10 @@ const resolvers = {
 
       return removeInv;
     },
-    createItem: async (parent, { input }) => {
+    createItem: async (parent, { inventoryId, input }) => {
       const createItem = await Item.create(input);
       const addItto = await Inventory.findByIdAndUpdate(
-        input.inventoryId,
+        inventoryId,
         { $push: { items: createItem._id } },
         { new: true }
       );
@@ -145,7 +146,7 @@ const resolvers = {
         throw new AuthenticationError("Something went wrong!");
       }
 
-      return addItto;
+      return createItem;
     },
     updateItem: async (parent, { _id, input }) => {
       const updateItem = await Item.findByIdAndUpdate(_id, input, {

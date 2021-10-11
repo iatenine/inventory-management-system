@@ -10,8 +10,7 @@ import Auth from "../utils/auth";
 
 export const InventoryDashboard = () => {
   const profile: any = Auth.getProfile();
-
-  const { loading, data } = useQuery(QUERY_USER, {
+  const { loading, data } = useQuery(QUERY_USER,  {
     variables: { _id: profile.data._id },
   });
 
@@ -19,7 +18,31 @@ export const InventoryDashboard = () => {
     return <div>Loading...</div>;
   }
 
+  console.log(data)
   const inventories = data?.user.inventories || {};
+
+
+  if(inventories.legnth < 1){
+    return (
+         <div>
+      <div className="ui center aligned container">
+        <h1 className="">
+          <span className="hiWhite">Inventory Dashboard</span>
+        </h1>
+      </div>
+        <h3 style={{color: "white"}}> Currently, you do not have any inventories! Please use the add inventory button below to add some!</h3>
+          <div className="row">
+            <div className="column">
+              <Link to="/add-inventory">
+                <button className="ui fluid primary button" type="submit">
+                  Add Inventory
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+    )
+  }
 
   return (
     // dropdown
@@ -33,17 +56,13 @@ export const InventoryDashboard = () => {
           <div className="row">
             <div className="column">
               {inventories.map((inventory: any) => {
-                {
-                  console.log(inventory);
-                }
                 return (
-                  <div className="ui special cards">
+                  <div key={inventory._id} className="ui special cards">
                     <div className="card">
                       <div className="blurring dimmable image">
                         <div className="ui dimmer">
                           <div className="content"></div>
                         </div>
-                        {/* <img src={Default} alt={inventory.name} /> */}
                       </div>
                       <div className="content">
                         <div className="header">{inventory.name}</div>
