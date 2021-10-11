@@ -12,7 +12,7 @@ const InventoryCard: React.FC<IInventoryCardProps> = (
   console.log(props)
   return (
     <div className="ui special cards">
-      <div className="card">
+      <div className="card" key={props._id}>
         <div className="blurring dimmable image">
           <div className="ui dimmer">
             <div className="content"></div>
