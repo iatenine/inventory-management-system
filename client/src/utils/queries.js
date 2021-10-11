@@ -27,7 +27,6 @@ export const QUERY_SINGLE_INVENTORY = gql`
         _id
         name
         quantity
-        image
         category
       }
     }

@@ -12,19 +12,18 @@ export const AddItem = () => {
       const {name, value} = event.target
       setFormInputSubmit({...formInputSubmit, [name] : value})
   }
-    const stn = formInputSubmit.quantity
-    stn.ParseInt()
-    console.log(stn)
+  
+
 
   console.log(formInputSubmit)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      console.log({formInputSubmit})
+  const stn = formInputSubmit.quantity
+    const stnn = parseInt(stn)
       const {data} = await createItem({
-        
-        variables: { inventoryId: inventoryId, input: {name: formInputSubmit.name,}
+        variables: { inventoryId: inventoryId, input: {name: formInputSubmit.name, quantity: stnn}
       }});
 
       if(error){
@@ -51,7 +50,7 @@ export const AddItem = () => {
     <form onSubmit={handleFormSubmit}>
       <div className="">
         <input type="text" className="" value={formInputSubmit.name} name="name" placeholder="Add Item Name" onChange={handleInputChange} />
-        <input value={formInputSubmit.quantity} name="quantity" placeholder="Add Item Quantity" onChange={handleInputChange} />
+        <input type="number" value={formInputSubmit.quantity} name="quantity" placeholder="Add Item Quantity" onChange={handleInputChange} />
       </div>
       <div className="">
         <button className="ui primary button">Add item</button>
