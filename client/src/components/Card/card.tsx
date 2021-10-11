@@ -8,7 +8,7 @@ interface ICardProps {
 }
 
 const Cards: React.FC<ICardProps> = (props: ICardProps) => {
-  console.log(props)
+  console.log(props);
   return (
     <div className="ui special cards">
       <div className="card">
@@ -25,6 +25,7 @@ const Cards: React.FC<ICardProps> = (props: ICardProps) => {
           </div>
         </div>
         <div className="extra content">
+<<<<<<< HEAD
           {/* <span>Categories</span>
           <p> */}
             {/* {props.categories.map((category: string, index: number) => {
@@ -43,6 +44,10 @@ const Cards: React.FC<ICardProps> = (props: ICardProps) => {
               placeholder="Add Category"
             /> */}
             <button className="ui fluid primary button"> Update/Remove </button>
+=======
+          <div className="center">
+            <button className="ui fluid primary button">Update</button>
+>>>>>>> main
           </div>
         </div>
       {/* </div> */}
