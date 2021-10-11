@@ -69,14 +69,14 @@ export const UPDATE_ITEM = gql`
 mutation updateItem($_id: ID!, $input: updateItem!){
   updateItem(_id: $_id, input: $input){
     _id
+    name
+    quantity
   }
 }
 `;
 
 export const DELETE_ITEM = gql`
 mutation deleteItem($_id: ID!){
-  deleteItem(_id: $_id){
-    name
-  }
+  deleteItem(_id: $_id)
 }
 `;

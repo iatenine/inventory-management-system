@@ -10,7 +10,6 @@ import Auth from "../utils/auth";
 
 export const InventoryDashboard = () => {
   const profile: any = Auth.getProfile();
-  console.log(profile)
   const { loading, data } = useQuery(QUERY_USER,  {
     variables: { _id: profile.data._id },
   });
@@ -22,7 +21,6 @@ export const InventoryDashboard = () => {
   console.log(data)
   const inventories = data?.user.inventories || {};
 
-  console.log(inventories)
 
   if(inventories.legnth < 1){
     return (
