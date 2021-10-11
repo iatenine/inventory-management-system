@@ -40,11 +40,15 @@ function Signup(props) {
         </h3>
       ) : (
         <div>
-          <h2>Signup</h2>
+          <h2>
+            <span className="hiWhite">Signup</span>
+          </h2>
 
           <form className="ui form">
             <div className="field">
-              <label htmlFor="firstName">User Name:</label>
+              <label htmlFor="firstName">
+                <span className="hiWhite">User Name:</span>
+              </label>
               <input
                 placeholder="Username"
                 name="username"
@@ -53,7 +57,9 @@ function Signup(props) {
               />
             </div>
             <div className="field">
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email">
+                <span className="hiWhite">Email:</span>
+              </label>
               <input
                 placeholder="youremail@test.com"
                 name="email"
@@ -62,7 +68,9 @@ function Signup(props) {
               />
             </div>
             <div className="field">
-              <label htmlFor="pwd">Password:</label>
+              <label htmlFor="pwd">
+                <span className="hiWhite">Password:</span>
+              </label>
               <input
                 placeholder="******"
                 name="password"

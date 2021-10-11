@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ApolloClient,
   ApolloProvider,
@@ -7,7 +6,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import Auth from "./utils/auth";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
@@ -15,9 +14,12 @@ import { InventoryDashboard } from "./pages/inventoryDashboard";
 import { ItemDashboard } from "./pages/itemDashboard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 import AddInventory from "./pages/addInventory";
+<<<<<<< HEAD
 import AddItem from "./pages/addItem";
+=======
+import UpdateItem from "./pages/updateItem";
+>>>>>>> main
 
 const httpLink = createHttpLink({
   uri:
@@ -42,16 +44,17 @@ const client = new ApolloClient({
 });
 
 function App() {
+  console.log(Auth.loggedIn());
+
   return (
     <ApolloProvider client={client}>
-      <Header />
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          {/* <Header /> */}
+          <Header />
           <div className="container">
             {/* Define routes to render different page components at different paths */}
             <Route exact path="/">
-              <Home />
+              {!Auth.loggedIn() ? <Home /> : <InventoryDashboard />}
             </Route>
 
             <Route exact path="/login">
@@ -70,6 +73,10 @@ function App() {
               <AddInventory />
             </Route>
 
+            <Route exact path="/update-item/:itemId">
+              <UpdateItem />
+            </Route>
+
             <Route exact path="/inventory/:inventoryId">
               <ItemDashboard />
             </Route>
@@ -78,7 +85,6 @@ function App() {
               <AddItem />
             </Route>
           </div>
-          {/* <Footer /> */}
         </div>
         <Footer />
       </Router>

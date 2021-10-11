@@ -4,10 +4,11 @@ import Register from "./register";
 
 export const Home: React.FC = () => {
   return (
-    <div>
+    <div className="woodBackground styleText">
       <div className="column">
         <div className="row">
           <Login />
+          <br />
           <Register />
         </div>
       </div>

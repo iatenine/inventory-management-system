@@ -25,7 +25,9 @@ export const ItemDashboard: React.FC = () => {
     // dropdown
     <div>
       <div className="ui center aligned container">
-        <h1>Items in {invName}</h1>
+        <h1>
+          <span className="hiWhite">Items in {invName}</span>
+        </h1>
       </div>
 
       <div className="ui center aligned container">
@@ -41,6 +43,7 @@ export const ItemDashboard: React.FC = () => {
                       name: item.name,
                       quantity: item.quantity,
                       categories: item.categories,
+                      _id: item._id,
                     }}
                   />
                 );
