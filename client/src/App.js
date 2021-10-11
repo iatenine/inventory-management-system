@@ -17,6 +17,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AddInventory from "./pages/addInventory";
+import AddItem from "./pages/addItem";
 
 const httpLink = createHttpLink({
   uri:
@@ -71,6 +72,10 @@ function App() {
 
             <Route exact path="/inventory/:inventoryId">
               <ItemDashboard />
+            </Route>
+
+            <Route exact path="/addItem/:inventoryId">
+              <AddItem />
             </Route>
           </div>
           {/* <Footer /> */}

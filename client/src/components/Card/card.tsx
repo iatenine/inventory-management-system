@@ -25,33 +25,14 @@ const Cards: React.FC<ICardProps> = (props: ICardProps) => {
           </div>
         </div>
         <div className="extra content">
-<<<<<<< HEAD
-          {/* <span>Categories</span>
-          <p> */}
-            {/* {props.categories.map((category: string, index: number) => {
-              return (
-                <span key={category}>
-                  {category}
-                  {index !== props.categories.length - 1 ? ", " : ""}
-                </span>
-              );
-            })} */}
-          {/* </p> */}
-          {/* <div className="center">
-            <input
-              type="text"
-              className="ui fluid"
-              placeholder="Add Category"
-            /> */}
-            <button className="ui fluid primary button"> Update/Remove </button>
-=======
           <div className="center">
             <button className="ui fluid primary button">Update</button>
->>>>>>> main
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </div>
   );
 };
+
 export default Cards;
+

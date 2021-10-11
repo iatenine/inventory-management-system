@@ -56,7 +56,7 @@ mutation deleteInventory($_id: ID!){
 }`;
 
 export const CREATE_ITEM = gql`
-mutation createItem($input: newItem! ){
+mutation createItem($input: newItem!){
   createItem(input: $input){
     _id
     name

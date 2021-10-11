@@ -38,7 +38,7 @@ const typeDefs = gql`
     inventoryId: ID!
     name: String!
     quantity: Int!
-    category: [String!]
+    category: [String]
     image: String
   }
 

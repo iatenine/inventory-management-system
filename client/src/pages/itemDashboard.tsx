@@ -12,14 +12,6 @@ export const ItemDashboard: React.FC = () => {
   const { loading, data } = useQuery(QUERY_SINGLE_INVENTORY, {
     variables: { _id: inventoryId },
   });
-
-<<<<<<< HEAD
-  if(loading){
-    <div>Loading...</div>
-  }
-
-  const invItems = data?.inventory.items || []
-=======
   console.log(data);
   if (loading) return <div>Loading...</div>;
 
@@ -27,29 +19,13 @@ export const ItemDashboard: React.FC = () => {
   const invName = data?.inventory.name || "";
 
   console.log("invItems: ", invItems);
->>>>>>> main
 
   console.log(data)
   return (
     // dropdown
     <div>
       <div className="ui center aligned container">
-<<<<<<< HEAD
-        <h1>Items in {}</h1>
-        <div className="ui compact menu">
-          <div className="ui simple dropdown item">
-            Dropdown
-            <i className="dropdown icon"></i>
-            <div className="menu">
-              {/* map over item categories and create like this */}
-              <div className="item">Category 1</div>
-              {/* end here */}
-            </div>
-          </div>
-        </div>
-=======
         <h1>Items in {invName}</h1>
->>>>>>> main
       </div>
 
       <div className="ui center aligned container">
@@ -69,22 +45,23 @@ export const ItemDashboard: React.FC = () => {
                   />
                 );
               })}
+              <Link className="ui fluid primary button" to={`/addItem/${inventoryId}`}>
+                  + Add Item to {invName}
+              </Link>
+              <br />
+              <br />
+              <br />
             </div>
           </div>
           {/* end here */}
           {/* add item button */}
           <div className="row">
             <div className="column">
-              <Link to={`/addItem/${inventoryId}`}>
-                <button className="ui fluid primary button">
-                  + Add Item to {invName}
-                </button>
-              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div>        
   );
 };
 export default ItemDashboard;
