@@ -36,16 +36,22 @@ const Login = () => {
     <div className="ui center aligned container">
       {data ? (
         <h2>
-          You are already logged in! You may now head{" "}
-          <Link to="/">back to the homepage.</Link>
+          <span className="hiWhite">
+            You are already logged in! You may now head{" "}
+            <Link to="/">back to the homepage.</Link>
+          </span>
         </h2>
       ) : (
         <div>
-          <h2>Login Below</h2>
+          <h2>
+            <span className="hiWhite">Login Below</span>
+          </h2>
 
           <form className="ui form" onSubmit={handleFormSubmit}>
             <div className="field">
-              <label>Username</label>
+              <label>
+                <span className="hiWhite">Username</span>
+              </label>
               <input
                 type="text"
                 name="username"
@@ -55,7 +61,9 @@ const Login = () => {
               ></input>
             </div>
             <div className="field">
-              <label>Password</label>
+              <label>
+                <span className="hiWhite">Password</span>
+              </label>
               <input
                 type="password"
                 name="password"

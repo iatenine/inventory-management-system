@@ -28,3 +28,32 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+
+.woodBackground {
+  background-image: url("./imgs/wood-bg.png");
+  background-size: cover;
+}
+
+.gearBackground {
+  background-image: url("./imgs/Gears.gif");
+  background-size: cover;
+}
+
+.lightGrayBG {
+  background-color: lightgray;
+}
+
+.whiteText {
+  color: white;
+}
+
+.styleText {
+  font-weight: bold;
+  border-bottom: solid black 2px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.hiWhite {
+  background-color: white;
+  border: black solid 2px;
+}

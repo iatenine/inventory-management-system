@@ -6,7 +6,7 @@ const homepageHeader = () => {
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         {/* Use Link component to create a link that returns to the homepage on click */}
         <p className="m-0" style={{ fontSize: "1.75rem", fontWeight: "700" }}>
-          Inventory Management System
+          <span className="hiWhite">Inventory Management System</span>
           {Auth.getToken() ? (
             <button
               onClick={() => Auth.logout()}
