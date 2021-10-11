@@ -34,9 +34,8 @@ const typeDefs = gql`
   }
 
   input newItem {
-    inventoryId: ID!
     name: String!
-    quantity: Int!
+    quantity: Int
     category: [String]
     image: String
   }
@@ -66,7 +65,7 @@ const typeDefs = gql`
     updateInventory(_id: ID!, input: newInventory!): Inventory
     deleteInventory(_id: ID!): Inventory
 
-    createItem(input: newItem!): Inventory
+    createItem(inventoryId: ID!, input: newItem!): Item
     updateItem(_id: ID!, input: updateItem!): Inventory
     deleteItem(_id: ID!): Int
   }

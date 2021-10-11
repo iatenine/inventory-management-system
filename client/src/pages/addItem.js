@@ -3,23 +3,29 @@ import { useParams } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { CREATE_ITEM } from "../utils/mutations"
 
-export const AddItem: React.FC = () => {
+export const AddItem = () => {
   const { inventoryId } = useParams();
-  const [formInputSubmit, setFormInputSubmit] = useState({ name: '', quantity: '' })
-  const [addItem, {error}] = useMutation(CREATE_ITEM)
+  const [formInputSubmit, setFormInputSubmit] = useState({ name: '', quantity: "" })
+  const [createItem, {error}] = useMutation(CREATE_ITEM)
 
   const handleInputChange = (event) => {
-      const {name, quantity} = event.target
-      setFormInputSubmit({...formInputSubmit, [name] : quantity})
+      const {name, value} = event.target
+      setFormInputSubmit({...formInputSubmit, [name] : value})
   }
+    const stn = formInputSubmit.quantity
+    stn.ParseInt()
+    console.log(stn)
 
+  console.log(formInputSubmit)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const {data} = await addItem({
-        variables: {inventoryId: inventoryId, ...formInputSubmit}
-      });
+      console.log({formInputSubmit})
+      const {data} = await createItem({
+        
+        variables: { inventoryId: inventoryId, input: {name: formInputSubmit.name,}
+      }});
 
       if(error){
         console.log(error)
@@ -45,7 +51,7 @@ export const AddItem: React.FC = () => {
     <form onSubmit={handleFormSubmit}>
       <div className="">
         <input type="text" className="" value={formInputSubmit.name} name="name" placeholder="Add Item Name" onChange={handleInputChange} />
-        <input type="number" className="" value={formInputSubmit.quantity} name="quantity" placeholder="Add Item Quantity" onChange={handleInputChange} />
+        <input value={formInputSubmit.quantity} name="quantity" placeholder="Add Item Quantity" onChange={handleInputChange} />
       </div>
       <div className="">
         <button className="ui primary button">Add item</button>

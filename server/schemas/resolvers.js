@@ -133,10 +133,10 @@ const resolvers = {
 
       return removeInv;
     },
-    createItem: async (parent, { input }) => {
+    createItem: async (parent, { inventoryId, input }) => {
       const createItem = await Item.create(input);
       const addItto = await Inventory.findByIdAndUpdate(
-        input.inventoryId,
+        inventoryId,
         { $push: { items: createItem._id } },
         { new: true }
       );
@@ -145,7 +145,7 @@ const resolvers = {
         throw new AuthenticationError("Something went wrong!");
       }
 
-      return addItto;
+      return createItem;
     },
     updateItem: async (parent, { _id, input }) => {
       const updateItem = await Item.findByIdAndUpdate(_id, input, {
