@@ -1,25 +1,14 @@
-// import React from "react";
-// Import React Router Link component for internal hyperlinks
-import Navbar from "../Navbar";
-
 const homepageFooter = () => {
-  const NavProps = {
-    loggedIn: true,
-    logout: () => {
-      console.log("Logout placeholder function");
-    },
-  };
-
   const footerStyle = {
     position: "fixed",
     bottom: "0",
     width: "100%",
+    zIndex: "999",
   };
 
   return (
     <footer style={footerStyle}>
       <div>
-        <Navbar />
         <div className="bottom-style">
           <div id="box2">
             <div>
