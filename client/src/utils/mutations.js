@@ -31,8 +31,8 @@ mutation deleteUser ($_id: ID!){
 `;
 
 export const CREATE_INVENTORY = gql`
-mutation createInventory($input: newInventory!){
-  createInventory(input: $input){
+mutation createInventory($inventoryId: ID!, $input: newInventory!){
+  createInventory(inventoryId: $inventoryId, input: $input){
     _id
     name
   }

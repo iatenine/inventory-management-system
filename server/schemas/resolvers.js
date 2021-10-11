@@ -100,16 +100,17 @@ const resolvers = {
       }
       return { User: removeUser };
     },
-    createInventory: async (parent, { input }) => {
+    createInventory: async (parent, { inventoryId, input }) => {
       const createInventory = await Inventory.create(input);
-
+      const addtoUs = await User.findByIdAndUpdate(inventoryId,
+      { $push: {inventories: createInventory._id} }, {new: true})
       if (!createInventory) {
         throw new AuthenticationError("Something went wrong!");
       }
 
       return createInventory;
     },
-    updateInventory: async (parent, { _id, input }) => {
+    updateInventory: async (parent, { _id, input },) => {
       const updateInv = await Inventory.findByIdAndUpdate(_id, input, {
         new: true,
       });

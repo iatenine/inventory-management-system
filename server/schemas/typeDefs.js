@@ -61,7 +61,7 @@ const typeDefs = gql`
     createUser(username: String!, email: String!, password: String!): Auth
     deleteUser(_id: ID!): User
 
-    createInventory(input: newInventory!): Inventory
+    createInventory(inventoryId: ID!, input: newInventory!): Inventory
     updateInventory(_id: ID!, input: newInventory!): Inventory
     deleteInventory(_id: ID!): Inventory
 
