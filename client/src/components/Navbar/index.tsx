@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ loggedIn, logout }) => {
   return (
-    <nav className="navbar">
+    <nav className="navbar woodBackground whiteText">
       <Link to="/inventory-dashboard">
         <button className="nav-button">View Inventories</button>
       </Link>

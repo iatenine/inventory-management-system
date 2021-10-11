@@ -1,6 +1,6 @@
 // import React from "react";
 // Import React Router Link component for internal hyperlinks
-import Navbar from "../Navbar";
+//import Navbar from "../Navbar";
 
 const homepageFooter = () => {
   const NavProps = {
@@ -19,15 +19,14 @@ const homepageFooter = () => {
   return (
     <footer style={footerStyle}>
       <div>
-        <Navbar />
-        <div className="bottom-style">
+        <div className="bottom-style gearBackground styleText">
           <div id="box2">
             <div>
               <a
                 target="no_blank"
                 href="https://github.com/iatenine/inventory-management-system"
               >
-                Repo Link
+                <span className="hiWhite">Repo Link</span>
               </a>
             </div>
           </div>
@@ -37,7 +36,7 @@ const homepageFooter = () => {
                 target="no_blank"
                 href="https://inventory-management-system-0.herokuapp.com"
               >
-                Deploy Link
+                <span className="hiWhite">Deploy Link</span>
               </a>
             </div>
           </div>
@@ -45,7 +44,8 @@ const homepageFooter = () => {
           <div id="box4">
             <div className="center-box">
               <div>
-                <i className="far fa-copyright"></i> 2019 Copyright:{" "}
+                <i className="far fa-copyright"></i>{" "}
+                <span className="hiWhite">2021 Copyright: </span>
               </div>
             </div>
           </div>
